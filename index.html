@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payroll Process Presentation - Sihle Sehole</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+     <header>
+    <img src="image.htlm/logo.jpg" alt="Company Logo" class="logo" />
+    <h1>Payroll & Leave Process Overview</h1>
+    <p><strong>Presented by:</strong> Sihle Sehole</p>
+  </header>
+
+  <!-- Sections start here -->
+  <section>
+    <h2>About Our Payroll System</h2>
+    <p>We use <strong>PaySpace</strong> to process payroll. Salaries are paid on the <strong>last day of each month</strong>. The payroll cycle begins on the <strong>26th</strong> and ends on the <strong>25th</strong> of the following month.</p>
+    <div class="highlight">If you are a new employee, your first salary will be <strong>pro-rated</strong> based on the number of days worked.</div>
+  </section>
+
+  <section>
+    <h2>Salary Calculation Example</h2>
+    <p>If your monthly earning is R3000 and the standard month is 21.67 working days:</p>
+    <ul>
+      <li><strong>Daily rate:</strong> R3000 ÷ 21.67 = R138.44</li>
+      <li><strong>If you worked 20 days:</strong> 138.44 × 20 = <strong>R2768.80</strong></li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Query and Payslip Policy</h2>
+    <ul>
+      <li>Payslips are uploaded on <strong>ESS</strong> (Employee Self Service).</li>
+      <li>Queries must be sent via your <strong>manager</strong> only.</li>
+      <li><strong>Do not email payroll directly</strong> – queries will be ignored.</li>
+      <li>8-hour window to raise queries (if month is not short).</li>
+      <li>Late queries = handled in the next month.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Leave Policy & ESS Usage</h2>
+    <ul>
+      <li>Apply for leave on <strong>ESS</strong>.</li>
+      <li>Add doctor’s notes and comments.</li>
+      <li>Best practice: Talk to your manager before applying.</li>
+      <li>Leave remains <strong>pending</strong> until approved.</li>
+      <li><strong>After 20 working days</strong>, your leave balance starts accruing.</li>
+      <li><strong>To accrue 1 full day of annual leave</strong> (on a Monday–Friday work schedule), you must work approximately <strong>17 to 18 days</strong> in the month.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Banking & Shift Allowance</h2>
+    <ul>
+      <li>Submit a copy of your new bank Account and Complite <strong>Change of Banking Details form.</strong></li>
+      <li><strong>Shift allowance</strong> = 6% of hourly rate.</li>
+      <li>Example: R3000 → R138.44 daily → R17.31 hourly → 6% = R1.04 per hour</li>
+      <li>Worked 4.75 hours in a shift = <strong>R4.93 extra earning</strong></li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Commission Process</h2>
+    <p>Commissions are calculated in India and added to your payslip the following month.</p>
+  </section>
+       
+  <section>
+    <h2>Leave Legal Scenarios</h2>
+    <div class="table-container">
+      <table>
+        <thead>
+          <tr>
+            <th>Scenario</th>
+            <th>Is it Legal?</th>
+            <th>Notes</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Take 1 day leave after 10 days</td>
+            <td>❌ Not automatic</td>
+            <td>You've only accrued ±0.5 days; need company approval for advance leave</td>
+          </tr>
+          <tr>
+            <td>Leave accrues monthly</td>
+            <td>✅ Yes</td>
+            <td>1.25 days per month for 5-day work week</td>
+          </tr>
+          <tr>
+            <td>Leave in advance</td>
+            <td>✅ If approved by company</td>
+            <td>Allowed, but not a legal right</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section>
+    <h2>Final Notes</h2>
+    <ul>
+      <li>Always check the <strong>group chat</strong> if you're on leave or absent.</li>
+      <li>Managers will prioritize absent employees for important updates.</li>
+      <li>Ask your <strong>manager</strong> if you have any questions.</li>
+    </ul>
+  
+  </section>
+  <section>
+      <p class="footer-note">Thank you for your attention. Welcome to the team!</p>
+  </section>
+
+  <div class="nav-buttons">
+    <button onclick="navigate(-1)">Previous</button>
+    <button onclick="navigate(1)">Next</button>
+  </div>
+
+  <script>
+    const sections = document.querySelectorAll('section');
+    let current = 0;
+    function showSection(index) {
+      sections.forEach((s, i) => {
+        s.style.opacity = i === index ? '1' : '0';
+        s.style.pointerEvents = i === index ? 'auto' : 'none';
+        s.style.zIndex = i === index ? '1' : '0';
+      });
+    }
+    function navigate(direction) {
+      current += direction;
+      if (current < 0) current = 0;
+      if (current >= sections.length) current = sections.length - 1;
+      showSection(current);
+    }
+    showSection(current);
+  </script>
+</body>
+</html>
